@@ -41,7 +41,7 @@ export default function ConsilosPage() {
               Soluciones integrales en almacenamiento de granos
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
-              CONSILOS es líder brasileño en fabricación de silos, secadoras y sistemas de almacenamiento. Equipos robustos diseñados para conservar la calidad de su cosecha.
+              Empresa certificada ISO 9001. Silos Planos, Elevados y de Expedición. Máquinas de limpieza, Secaderos y equipamiento completo para unidades almacenadoras. Del proyecto a la puesta en marcha.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/silos">
@@ -71,13 +71,13 @@ export default function ConsilosPage() {
             >
               <Badge variant="outline" className="mb-4 border-gray-300 h-[35px] px-4 flex items-center justify-center w-fit">Sobre CONSILOS</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0D1B2A] mb-6 font-heading">
-                Referencia en poscosecha y almacenamiento de granos
+                Empresa certificada ISO 9001 en poscosecha
               </h2>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                CONSILOS es una empresa brasileña especializada en el diseño y fabricación de equipos para el almacenamiento, secado, limpieza y transporte de granos. Con tecnología de punta y estándares de calidad internacional, sus productos garantizan la conservación óptima de la producción agrícola.
+                CONSILOS es una empresa brasileña certificada ISO 9001, especializada en el diseño y fabricación de Silos Planos, Elevados y de Expedición, Máquinas de limpieza, Secaderos y equipamiento completo para unidades almacenadoras.
               </p>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                Electrogrupo representa oficialmente a CONSILOS en Paraguay, ofreciendo el portafolio completo de soluciones de poscosecha con instalación y soporte técnico especializado.
+                Electrogrupo representa oficialmente a CONSILOS en Paraguay desde 2025, ofreciendo el portafolio completo de soluciones de poscosecha: del proyecto a la puesta en marcha, con instalación y soporte técnico especializado.
               </p>
               <div className="grid grid-cols-3 gap-6">
                 <div className="flex flex-col items-center text-center">

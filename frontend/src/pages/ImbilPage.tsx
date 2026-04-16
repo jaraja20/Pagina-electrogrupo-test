@@ -71,13 +71,13 @@ export default function ImbilPage() {
             >
               <Badge variant="outline" className="mb-4 border-gray-300 h-[35px] px-4 flex items-center justify-center w-fit">Sobre IMBIL</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0D1B2A] mb-6 font-heading">
-                Más de 60 años de excelencia en bombeo de agua
+                Bombas de alta performance para grandes caudales
               </h2>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                IMBIL (Indústria Metalúrgica de Bombas Irmãos Lachmann) es un fabricante brasileño con más de seis décadas de experiencia en el diseño y fabricación de bombas centrífugas de alto rendimiento para aplicaciones agrícolas e industriales.
+                IMBIL (Indústria Metalúrgica de Bombas Irmãos Lachmann) es un fabricante brasileño con más de seis décadas de experiencia en bombas centrífugas de alto rendimiento. Especialistas en sistemas para irrigación agrícola con énfasis en cultivos con demanda de grandes caudales.
               </p>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                Electrogrupo es el representante oficial de IMBIL en Paraguay, garantizando disponibilidad de equipos, repuestos originales y asistencia técnica especializada para proyectos de cualquier escala.
+                Electrogrupo es el representante oficial de IMBIL en Paraguay desde 2024, brindando cobertura de proyecto, instalación y servicio técnico especializado para sistemas de bombeo de cualquier escala.
               </p>
               <div className="grid grid-cols-3 gap-6">
                 <div className="flex flex-col items-center text-center">

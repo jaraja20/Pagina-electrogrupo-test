@@ -527,7 +527,7 @@ const Mission = () => {
               Brindar tecnología e innovación para el campo paraguayo
             </h2>
             <p className="text-gray-600 text-lg mb-8">
-              Trabajamos con marcas especializadas para cada etapa de su producción diseñados para mejorar la productividad, rendimiento y control operativo.
+              Desde 1990 proyectamos, fabricamos e instalamos soluciones para electricidad industrial, irrigación y almacenamiento de granos en todo el territorio nacional. No vendemos equipos: entregamos sistemas de vanguardia.
             </p>
             
             <Link to="/sobre-nosotros">
@@ -541,17 +541,17 @@ const Mission = () => {
                 <span className="text-4xl font-bold text-[#0D1B2A] block mb-1">
                   <AnimatedCounter from={0} to={30} prefix="+" />
                 </span>
-                <span className="text-gray-500 text-sm">Años</span>
+                <span className="text-gray-500 text-sm">Años construyendo el agro</span>
               </div>
               <div>
                 <span className="text-4xl font-bold text-[#0D1B2A] block mb-1">
-                  <AnimatedCounter from={0} to={500} prefix="+" />
+                  <AnimatedCounter from={0} to={60} prefix="+" />
                 </span>
-                <span className="text-gray-500 text-sm">Clientes</span>
+                <span className="text-gray-500 text-sm">Colaboradores</span>
               </div>
               <div>
-                <span className="text-4xl font-bold text-[#0D1B2A] block mb-1">11</span>
-                <span className="text-gray-500 text-sm">Presente en 11 departamentos</span>
+                <span className="text-4xl font-bold text-[#0D1B2A] block mb-1">5.700m²</span>
+                <span className="text-gray-500 text-sm">Planta industrial propia</span>
               </div>
             </div>
           </motion.div>

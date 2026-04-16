@@ -71,29 +71,29 @@ export default function WesternPage() {
             >
               <Badge variant="outline" className="mb-4 border-gray-300 h-[35px] px-4 flex items-center justify-center w-fit">Sobre Western</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0D1B2A] mb-6 font-heading">
-                Innovación en irrigación desde hace más de 100 años
+                Durabilidad, confiabilidad y máxima productividad
               </h2>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                Western Land Roller es un fabricante estadounidense con sede en Hastings, Nebraska, reconocido mundialmente por sus sistemas de riego por Pivot Central de alta durabilidad y rendimiento. Sus equipos están diseñados para adaptarse a las condiciones más exigentes del campo.
+                Western diseña y fabrica sistemas de riego para condiciones extremas, cualquier superficie y cualquier tipo de agua. Tuberías de acero galvanizado que garantizan más de 15.000 horas de riego sin corrosión. Fabricados bajo rigurosos estándares de calidad.
               </p>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                Electrogrupo es el representante oficial de Western en Paraguay, brindando asesoramiento técnico, instalación y soporte completo para productores en todo el país.
+                Electrogrupo es el distribuidor oficial de Western en Paraguay desde 2022, brindando cobertura de proyecto, instalación y servicio técnico para productores en todo el país.
               </p>
               <div className="grid grid-cols-3 gap-6">
                 <div className="flex flex-col items-center text-center">
                   <Calendar className="w-6 h-6 text-[#E31E24] mb-2" />
-                  <span className="text-2xl font-bold text-[#0D1B2A]">+100</span>
-                  <span className="text-sm text-gray-500">Años de historia</span>
+                  <span className="text-2xl font-bold text-[#0D1B2A]">25.000+</span>
+                  <span className="text-sm text-gray-500">Pivots vendidos</span>
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <MapPin className="w-6 h-6 text-[#E31E24] mb-2" />
-                  <span className="text-2xl font-bold text-[#0D1B2A]">Global</span>
-                  <span className="text-sm text-gray-500">Presencia mundial</span>
+                  <span className="text-2xl font-bold text-[#0D1B2A]">80</span>
+                  <span className="text-sm text-gray-500">Países</span>
                 </div>
                 <div className="flex flex-col items-center text-center">
                   <Award className="w-6 h-6 text-[#E31E24] mb-2" />
-                  <span className="text-2xl font-bold text-[#0D1B2A]">#1</span>
-                  <span className="text-sm text-gray-500">En durabilidad</span>
+                  <span className="text-2xl font-bold text-[#0D1B2A]">15.000h</span>
+                  <span className="text-sm text-gray-500">Garantía anti-corrosión</span>
                 </div>
               </div>
             </motion.div>
@@ -127,22 +127,22 @@ export default function WesternPage() {
             {[
               {
                 icon: Droplets,
-                title: "Pivot Central",
-                desc: "Sistemas de riego de alta precisión con cobertura uniforme, disponibles en múltiples configuraciones para adaptarse a cualquier parcela.",
+                title: "Pivotes Centrales y Corner",
+                desc: "Pivot Central CP600 configurable con múltiples longitudes de tramo, diámetros de tubería (5\", 6⅝\", 8⅝\") y opciones de aspersión. Pivot Corner con guía GPS de precisión < 2.5cm.",
                 href: "/riego-por-pivot",
                 primary: true
               },
               {
                 icon: Cpu,
-                title: "Control Remoto y Telemetría",
-                desc: "Monitoreo y operación del sistema desde cualquier dispositivo. Control en tiempo real de velocidad, dirección y aplicación de agua.",
+                title: "Tecnología iControl",
+                desc: "Línea completa de paneles de control: iControlBasic, iControlStandard, iControlEvoTouch con pantalla táctil 7\", iControlRemote para gestión desde cualquier dispositivo.",
                 href: "/riego-por-pivot",
                 primary: false
               },
               {
                 icon: ShieldCheck,
-                title: "Repuestos y Mantenimiento",
-                desc: "Stock permanente de repuestos originales Western. Servicio técnico especializado y programa de mantenimiento preventivo.",
+                title: "Permapipe™ y Repuestos",
+                desc: "Tubería con revestimiento interno de HDPE para aguas corrosivas. Stock permanente de repuestos originales, motores, reductores y neumáticos.",
                 href: "#",
                 primary: false
               }

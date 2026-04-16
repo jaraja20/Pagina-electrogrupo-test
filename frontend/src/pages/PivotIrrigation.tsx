@@ -49,7 +49,7 @@ export default function PivotIrrigation() {
               Sistemas de Riego por Pivot Central Western
             </h1>
             <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
-              La solución definitiva para la irrigación agrícola. Maximice el rendimiento de sus cultivos con tecnología de precisión, estructura robusta y control remoto en tiempo real.
+              Pivot Central CP600 diseñado para una amplia variedad de condiciones meteorológicas, de cultivo y terreno. Máximo rendimiento con mínimo consumo de agua. Más de 25.000 pivots vendidos en 80 países.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-[#E31E24] text-white hover:bg-red-700 transition-all px-8 w-full sm:w-auto">
@@ -81,26 +81,26 @@ export default function PivotIrrigation() {
                 {
                   icon: ShieldCheck,
                   title: "Estructura Robusta",
-                  desc: "Acero galvanizado de alta calidad que garantiza décadas de vida útil frente a la corrosión y el clima extremo.",
-                  tooltip: "Protección garantizada"
+                  desc: "Tuberías de acero galvanizado en caliente con +15.000 horas de riego garantizadas sin corrosión. Barras de marco de acero de alta resistencia con cabezas forjadas en caliente.",
+                  tooltip: "+15.000h garantía"
                 },
                 {
                   icon: Droplets,
                   title: "Eficiencia Hídrica",
-                  desc: "Aplicación uniforme de agua que reduce el desperdicio y asegura que cada planta reciba la cantidad exacta necesaria.",
+                  desc: "Cartas de aspersión personalizadas para cada terreno, cultivo y condición climática. Baja presión de trabajo, aplicación eficiente y mínima pérdida por evaporación y viento.",
                   tooltip: "Ahorro de agua"
                 },
                 {
                   icon: Cpu,
-                  title: "Control Inteligente",
-                  desc: "Paneles de control avanzados que permiten monitorear y operar su sistema desde cualquier dispositivo móvil.",
-                  tooltip: "Tecnología de punta"
+                  title: "Tecnología iControl",
+                  desc: "Paneles de control avanzados: iControlEvoTouch con pantalla táctil 7\" Siemens. Gestión remota con iControlRemote desde cualquier dispositivo conectado a internet.",
+                  tooltip: "Control inteligente"
                 },
                 {
                   icon: Settings,
-                  title: "Mantenimiento Sencillo",
-                  desc: "Componentes estandarizados y diseño accesible que minimizan el tiempo de inactividad y los costos operativos.",
-                  tooltip: "Fácil de operar"
+                  title: "Motores de Alta Eficiencia",
+                  desc: "Motores de alta fiabilidad con 95% de eficiencia. Reductores de acero de alta resistencia diseñados para tramos más largos. Fabricados bajo ISO 9001.",
+                  tooltip: "95% eficiencia"
                 }
               ].map((feature, idx) => (
                 <motion.div 
@@ -151,18 +151,18 @@ export default function PivotIrrigation() {
             >
               <Badge variant="outline" className="mb-4 border-gray-300">Especificaciones</Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0D1B2A] mb-6 font-heading">
-                Ingeniería de Precisión para su Cultivo
+                Pivot CP600 - Ingeniería de Precisión
               </h2>
               <p className="text-gray-600 mb-8 text-lg">
-                Cada sistema Western es configurado a medida según la topografía, el tipo de suelo y los requerimientos hídricos de su proyecto agrícola.
+                Cada sistema Western CP600 es configurado a medida según la topografía, el tipo de suelo y los requerimientos hídricos de su proyecto agrícola.
               </p>
               
               <ul className="space-y-6">
                 {[
-                  "Tramos disponibles desde 114 hasta 213 pies para adaptarse a cualquier tamaño de parcela.",
-                  "Opciones de tubería en diámetros de 6 5/8\", 8 5/8\" y 10\" para optimizar el flujo y la presión.",
-                  "Cajas de engranajes (Gearboxes) de servicio pesado diseñadas para terrenos irregulares.",
-                  "Sistemas de aspersión configurables (Nelson, Senninger) para máxima uniformidad."
+                  "Tramos disponibles desde 38,38m (125.7') hasta 62,05m (203.7') para adaptarse a cualquier tamaño de parcela.",
+                  "Opciones de tubería en diámetros de 5\" (127mm), 6⅝\" (168.3mm) y 8⅝\" (219.1mm) para optimizar flujo y presión.",
+                  "Aleros configurables de 1,8m hasta 25,6m. Tecnología Permapipe™ con revestimiento interno de HDPE para aguas corrosivas.",
+                  "Pivot Corner con guía GPS de precisión < 2.5cm utilizando hasta 20 satélites. Aumenta hasta 20% el área irrigada."
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-4">
                     <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center shrink-0 mt-1">
