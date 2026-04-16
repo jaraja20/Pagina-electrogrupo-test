@@ -1,60 +1,62 @@
 # Electrogrupo Website - PRD
 
 ## Original Problem Statement
-User requested to clone and rebuild the repository https://github.com/jaraja20/Pagina-electrogrupo-test.git on the Emergent platform, keeping it exactly as-is before making any modifications.
+1. Clone and rebuild repository https://github.com/jaraja20/Pagina-electrogrupo-test.git
+2. Create dedicated brand pages for Western, CONSILOS, OuroPro, IMBIL
+3. Create service detail pages: Sistema de Bombeo, Fertirrigación, Silos (Riego por Pivot already existed)
+4. Differentiate brands from services: brand pages show company info, service pages show product details
+5. Connect everything: brand → service, service → brand, nav → services, footer → brands + services
 
 ## Architecture
-- **Frontend**: Vite 6 + React 19 + TypeScript + Tailwind CSS v4 + @base-ui/react (shadcn base-nova style)
-- **Backend**: Minimal FastAPI (health check only - the site is primarily frontend)
-- **Database**: MongoDB (available but not used yet)
-- **UI Library**: shadcn/ui with base-nova variant using @base-ui/react primitives
-- **Animations**: motion/react (Framer Motion)
+- **Frontend**: Vite 6 + React 19 + TypeScript + Tailwind CSS v4 + @base-ui/react (shadcn base-nova)
+- **Backend**: Minimal FastAPI (health check only)
+- **UI Library**: shadcn/ui with base-nova variant
+- **Animations**: motion/react
 - **Routing**: react-router-dom v7
 
-## User Personas
-- Agricultural producers in Paraguay seeking technology solutions
-- Cooperatives and agricultural enterprises
-- Visitors browsing irrigation, post-harvest, and farming technology products
+## Site Map (Implemented)
+```
+/ (Homepage)
+├── /marca/western (Western brand page) → /riego-por-pivot
+├── /marca/consilos (CONSILOS brand page) → /silos
+├── /marca/ouropro (OuroPro brand page) → /fertirrigacion
+├── /marca/imbil (IMBIL brand page) → /sistema-de-bombeo
+├── /riego-por-pivot (Pivot irrigation detail - Western)
+├── /sistema-de-bombeo (Water pumping detail - IMBIL)
+├── /fertirrigacion (Fertigation detail - OuroPro)
+├── /silos (Grain storage detail - CONSILOS)
+├── /sobre-nosotros (About Us)
+└── /proyectos (Projects/News)
+```
 
-## Core Requirements (Static)
-- Corporate website for Electrogrupo SACI
-- Product showcase: Pivot irrigation (Western), Pumping (IMBIL), Grain storage (CONSILOS), Fertigation (OuroPro)
-- Company info: About us, Projects/News, Contact
-- External forms via Tally.so for quotations and job applications
-- WhatsApp integration for direct contact
+## What's Been Implemented
+### Session 1 (Jan 16, 2026)
+- [x] Cloned and restructured repository for Emergent platform
+- [x] All original pages working
 
-## Pages Implemented
-- **Home** (`/`): Hero carousel (3 slides), Brands, Mission with animated counters, Solutions grid, News, CTA, Footer
-- **About Us** (`/sobre-nosotros`): History, Mission & Vision, Latest articles
-- **Projects** (`/proyectos`): Blog-style news layout with main article and sidebar
-- **Pivot Irrigation** (`/riego-por-pivot`): Product page with features, specs, and CTA
-
-## What's Been Implemented (Jan 16, 2026)
-- [x] Cloned repository from GitHub
-- [x] Restructured from root-level Vite project to /app/frontend/ + /app/backend/ for Emergent platform
-- [x] Configured Vite with allowedHosts for Kubernetes ingress
-- [x] All pages rendering correctly with all images from Cloudinary
-- [x] Navigation, routing, animations all functional
-- [x] Backend health check API working
-
-## Known Issues (from original repo)
-- PivotIrrigation page uses picsum.photos placeholder images (LOW priority)
-- Minor mobile nav overlay interception issue (LOW priority)
+### Session 2 (Jan 16, 2026)
+- [x] 4 brand pages: Western, CONSILOS, OuroPro, IMBIL
+- [x] 3 new service pages: Sistema de Bombeo, Fertirrigación, Silos
+- [x] Updated PivotIrrigation with brand link + real Cloudinary images
+- [x] Updated navigation dropdowns (Irrigación now includes Fertirrigación, Sistemas de Bombeo links work)
+- [x] Updated footer: Nuestras marcas → brand pages, Soluciones → service pages
+- [x] Homepage brand logos are clickable → brand pages
+- [x] Homepage Solutions cards link to brand pages
+- [x] Cross-linking: service pages have "Ver empresa" → brand page, brand pages have CTA → service page
+- [x] Testing: 100% frontend pass
 
 ## Prioritized Backlog
 ### P0 - Critical
-(none - site works as-is)
+(none)
 
 ### P1 - High
-- Replace placeholder images on Pivot Irrigation page with actual product images
-- Add Contact page functionality
-- Add Soporte (Support) page
+- User will provide panfletos/images for each brand - replace sample content
+- Add real images to brand and service pages
+- Contact page (Contactanos)
+- Soporte page
 
 ### P2 - Medium
+- Remaining Pos Cosecha service pages: Máquinas de limpieza, Secadora de granos, Transportadoras
 - SEO optimization
-- Performance optimization (lazy loading, image optimization)
-- Add more product pages (Bombeo, Silos, Secadoras, Transportadoras)
-- Implement WhatsApp chat widget
-
-### Next Tasks
-- User will provide modifications/new functionality requests
+- WhatsApp chat widget
+- Mobile navigation improvements
