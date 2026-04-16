@@ -5,6 +5,13 @@ import { motion, AnimatePresence, animate } from "motion/react";
 import PivotIrrigation from "./pages/PivotIrrigation";
 import ProjectsPage from "./pages/ProjectsPage";
 import AboutUs from "./pages/AboutUs";
+import WesternPage from "./pages/WesternPage";
+import ConsilosPage from "./pages/ConsilosPage";
+import OuroProPage from "./pages/OuroProPage";
+import ImbilPage from "./pages/ImbilPage";
+import SistemaBombeoPage from "./pages/SistemaBombeoPage";
+import FertirrigacionPage from "./pages/FertirrigacionPage";
+import SilosPage from "./pages/SilosPage";
 import { 
   Menu, 
   X, 
@@ -122,10 +129,11 @@ const Navbar = () => {
     ]},
     { name: "Irrigación", href: "#", subItems: [
       { name: "Riego por Pivot", icon: Droplets, href: "/riego-por-pivot" },
-      { name: "Sistemas de Bombeo", icon: Waves, href: "#" }
+      { name: "Sistemas de Bombeo", icon: Waves, href: "/sistema-de-bombeo" },
+      { name: "Fertirrigación", icon: Zap, href: "/fertirrigacion" }
     ]},
     { name: "Pos Cosecha", href: "#", subItems: [
-      { name: "Silos", icon: Database, href: "#" },
+      { name: "Silos", icon: Database, href: "/silos" },
       { name: "Máquinas de limpieza", icon: Settings, href: "#" },
       { name: "Secadora de granos", icon: Sun, href: "#" },
       { name: "Transportadoras", icon: Truck, href: "#" }
@@ -456,10 +464,10 @@ const Hero = () => {
 
 const Brands = () => {
   const brands = [
-    { name: "IMBIL", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651673/IMBIL_xo11xm.svg" },
-    { name: "Western", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651676/Western_mzvt1o.svg" },
-    { name: "CONSILOS", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651670/Consilos_xyzff0.svg" },
-    { name: "OuroPro", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651674/OuroPro_qusrqe.svg" },
+    { name: "IMBIL", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651673/IMBIL_xo11xm.svg", href: "/marca/imbil" },
+    { name: "Western", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651676/Western_mzvt1o.svg", href: "/marca/western" },
+    { name: "CONSILOS", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651670/Consilos_xyzff0.svg", href: "/marca/consilos" },
+    { name: "OuroPro", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651674/OuroPro_qusrqe.svg", href: "/marca/ouropro" },
   ];
 
   return (
@@ -473,14 +481,14 @@ const Brands = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center">
           {brands.map((brand) => (
-            <div key={brand.name} className="flex justify-center group">
+            <Link key={brand.name} to={brand.href} className="flex justify-center group" data-testid={`brand-link-${brand.name.toLowerCase()}`}>
               <img 
                 src={brand.logo} 
                 alt={`${brand.name} Logo`} 
                 className="h-[35px] w-auto opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                 referrerPolicy="no-referrer"
               />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -560,35 +568,35 @@ const Solutions = () => {
       brand: "CONSILOS",
       image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/C%C3%B3pia_de_cons_20190114_023_unjyzv_mxh4wm.webp",
       size: "large",
-      href: "#"
+      href: "/marca/consilos"
     },
     {
       title: "Riego por Pivot Central",
       brand: "Western",
       image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/iC_Wes_Eu_Corn_2021_04_1_orrzuk_wurarg.webp",
       size: "small",
-      href: "/riego-por-pivot"
+      href: "/marca/western"
     },
     {
       title: "Soluciones en bombeo de agua",
       brand: "IMBIL",
       image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/Bombas_campo_funcionando_yevcla_c545ri.webp",
       size: "small",
-      href: "#"
+      href: "/marca/imbil"
     },
     {
       title: "Fertirrigación de precisión",
       brand: "OuroPro",
       image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904813/37411_ujtcim_xcsfmr.webp",
       size: "small",
-      href: "#"
+      href: "/marca/ouropro"
     },
     {
       title: "Servicios especializados",
       brand: "Electrogrupo",
       image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904816/metallic-factory-machine_npwyji_vwqxhf.webp",
       size: "small",
-      href: "#"
+      href: "/sobre-nosotros"
     }
   ];
 
@@ -800,10 +808,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Nuestras marcas</h4>
             <ul className="space-y-4 text-sm opacity-70">
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Western</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">CONSILOS</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">OuroPro</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">IMBIL</a></li>
+              <li><Link to="/marca/western" className="hover:opacity-100 transition-opacity">Western</Link></li>
+              <li><Link to="/marca/consilos" className="hover:opacity-100 transition-opacity">CONSILOS</Link></li>
+              <li><Link to="/marca/ouropro" className="hover:opacity-100 transition-opacity">OuroPro</Link></li>
+              <li><Link to="/marca/imbil" className="hover:opacity-100 transition-opacity">IMBIL</Link></li>
             </ul>
           </div>
 
@@ -812,9 +820,9 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-6">Soluciones</h4>
             <ul className="space-y-4 text-sm opacity-70">
               <li><Link to="/riego-por-pivot" className="hover:opacity-100 transition-opacity">Riego por Pivot</Link></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Sistema de bombeo</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Fertirrigación</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Silos</a></li>
+              <li><Link to="/sistema-de-bombeo" className="hover:opacity-100 transition-opacity">Sistema de bombeo</Link></li>
+              <li><Link to="/fertirrigacion" className="hover:opacity-100 transition-opacity">Fertirrigación</Link></li>
+              <li><Link to="/silos" className="hover:opacity-100 transition-opacity">Silos</Link></li>
               <li><a href="#" className="hover:opacity-100 transition-opacity">Máquinas de limpieza</a></li>
               <li><a href="#" className="hover:opacity-100 transition-opacity">Secadora de Granos</a></li>
               <li><a href="#" className="hover:opacity-100 transition-opacity">Transportadores</a></li>
@@ -923,6 +931,13 @@ export default function App() {
               <Route path="/riego-por-pivot" element={<PivotIrrigation />} />
               <Route path="/proyectos" element={<ProjectsPage />} />
               <Route path="/sobre-nosotros" element={<AboutUs />} />
+              <Route path="/marca/western" element={<WesternPage />} />
+              <Route path="/marca/consilos" element={<ConsilosPage />} />
+              <Route path="/marca/ouropro" element={<OuroProPage />} />
+              <Route path="/marca/imbil" element={<ImbilPage />} />
+              <Route path="/sistema-de-bombeo" element={<SistemaBombeoPage />} />
+              <Route path="/fertirrigacion" element={<FertirrigacionPage />} />
+              <Route path="/silos" element={<SilosPage />} />
             </Routes>
           </div>
           <Footer />

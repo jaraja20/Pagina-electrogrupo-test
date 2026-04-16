@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -26,7 +27,7 @@ export default function PivotIrrigation() {
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-[#0D1B2A]">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://picsum.photos/seed/pivot-hero/1920/1080" 
+            src="https://res.cloudinary.com/difxr700v/image/upload/v1775904817/Photo_Wes_Pivots_Wa_Corn-1_mf2qcz_sl1ijr.webp" 
             alt="Sistema de riego por Pivot Central Western en operación" 
             className="w-full h-full object-cover opacity-40"
             referrerPolicy="no-referrer"
@@ -43,6 +44,7 @@ export default function PivotIrrigation() {
             <Badge className="bg-[#E31E24] text-white hover:bg-[#E31E24]/90 mb-6 px-4 py-1 text-sm">
               Western Irrigation
             </Badge>
+            <Link to="/marca/western" className="text-white/70 hover:text-white text-sm transition-colors ml-3">Ver empresa →</Link>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight font-heading">
               Sistemas de Riego por Pivot Central Western
             </h1>
@@ -136,7 +138,7 @@ export default function PivotIrrigation() {
               viewport={{ once: true }}
             >
               <img 
-                src="https://picsum.photos/seed/pivot-tech/800/600" 
+                src="https://res.cloudinary.com/difxr700v/image/upload/v1775904814/iC_Wes_Eu_Corn_2021_04_1_orrzuk_wurarg.webp" 
                 alt="Detalles técnicos del Pivot Western" 
                 className="rounded-3xl shadow-xl"
                 referrerPolicy="no-referrer"
