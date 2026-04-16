@@ -42,7 +42,7 @@ export default function SistemaBombeoPage() {
               Bombas centrífugas de alta eficiencia diseñadas para irrigación agrícola. Potencia, confiabilidad y bajo consumo energético para su operación de riego.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-[#E31E24] text-white hover:bg-red-700 px-8 w-full sm:w-auto" data-testid="bombeo-cotizar-btn">
                   Solicitar Cotización
                 </Button>
@@ -151,7 +151,7 @@ export default function SistemaBombeoPage() {
           <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
             Nuestros ingenieros están listos para diseñar el sistema de bombeo ideal para su proyecto de irrigación.
           </p>
-          <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-white text-[#E31E24] hover:bg-gray-100 px-10 text-lg h-14" data-testid="bombeo-cta-btn">
               Contactar a un Asesor
             </Button>

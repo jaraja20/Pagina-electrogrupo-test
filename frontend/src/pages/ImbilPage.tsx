@@ -49,7 +49,7 @@ export default function ImbilPage() {
                   Sistemas de Bombeo <ChevronRight className="w-4 h-4 ml-1" />
                 </Button>
               </Link>
-              <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-transparent text-white border border-white hover:bg-white hover:text-[#0D1B2A] w-full sm:w-auto" data-testid="imbil-cotizar-btn">
                   Solicitar Cotización
                 </Button>
@@ -169,7 +169,7 @@ export default function ImbilPage() {
                 Ver Sistemas de Bombeo
               </Button>
             </Link>
-            <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-transparent text-white border border-white hover:bg-white hover:text-[#E31E24] px-10 text-lg h-14">
                 Cotizar
               </Button>
