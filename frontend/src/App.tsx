@@ -125,7 +125,7 @@ const Navbar = () => {
     { name: "Empresa", href: "#", subItems: [
       { name: "Sobre nosotros", icon: Info, href: "/sobre-nosotros" },
       { name: "Proyectos", icon: Paperclip, href: "/proyectos" },
-      { name: "Trabaja con nosotros", icon: Briefcase, href: "https://wa.me/595983130313", external: true }
+      { name: "Trabaja con nosotros", icon: Briefcase, href: "https://tally.so/r/wL5qMz", external: true }
     ]},
     { name: "Irrigación", href: "#", subItems: [
       { name: "Riego por Pivot", icon: Droplets, href: "/riego-por-pivot" },
@@ -182,13 +182,8 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Actions */}
+        {/* Actions - removed */}
         <div className="hidden lg:flex items-center gap-4">
-          <a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-[#0D1B2A] hover:bg-[#FF0000] transition-colors text-white rounded-md px-8 py-5 text-base">
-              Cotizar
-            </Button>
-          </a>
         </div>
 
         {/* Mobile Nav */}
@@ -251,9 +246,6 @@ const Navbar = () => {
                   ))}
                 </Accordion>
                 <div className="pt-6 border-t flex flex-col gap-4">
-                  <a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer" className="w-full">
-                    <Button className="bg-[#0D1B2A] hover:bg-[#FF0000] transition-colors w-full">Cotizar</Button>
-                  </a>
                   <div className="flex items-center justify-center gap-4">
                     <TooltipProvider>
                       <Tooltip>
@@ -422,7 +414,7 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 w-full px-4">
-              <a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button size="lg" className="bg-white text-[#0D1B2A] hover:bg-[#FF0000] hover:text-white transition-all px-8 w-full">
                   Cotizar
                 </Button>
@@ -836,7 +828,7 @@ const Footer = () => {
               <li><Link to="/sobre-nosotros" className="hover:opacity-100 transition-opacity">Sobre nosotros</Link></li>
               <li><a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">Contactanos</a></li>
               <li><Link to="/proyectos" className="hover:opacity-100 transition-opacity">Proyectos</Link></li>
-              <li><a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">Trabaja con nosotros</a></li>
+              <li><a href="https://tally.so/r/wL5qMz" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">Trabaja con nosotros</a></li>
               <li><a href="#" className="hover:opacity-100 transition-opacity">Soporte</a></li>
             </ul>
           </div>
