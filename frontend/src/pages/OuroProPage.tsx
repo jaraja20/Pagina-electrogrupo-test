@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { TallyModal } from "@/components/TallyModal";
 import { ChevronRight, Droplets, Gauge, Leaf, MapPin, Calendar, Award } from "lucide-react";
 
 export default function OuroProPage() {
@@ -49,11 +50,11 @@ export default function OuroProPage() {
                   Fertirrigación <ChevronRight className="w-4 h-4 ml-1" />
                 </Button>
               </Link>
-              <button data-tally-open="b584We" data-tally-layout="modal" data-tally-auto-close="3000">
+              <TallyModal formId="b584We">
                 <Button size="lg" className="bg-transparent text-white border border-white hover:bg-white hover:text-[#0D1B2A] w-full sm:w-auto" data-testid="ouropro-cotizar-btn">
                   Solicitar Cotización
                 </Button>
-              </button>
+              </TallyModal>
             </div>
           </motion.div>
         </div>
@@ -169,11 +170,11 @@ export default function OuroProPage() {
                 Ver Fertirrigación
               </Button>
             </Link>
-            <button data-tally-open="b584We" data-tally-layout="modal" data-tally-auto-close="3000">
+            <TallyModal formId="b584We">
               <Button size="lg" className="bg-transparent text-white border border-white hover:bg-white hover:text-[#E31E24] px-10 text-lg h-14">
                 Cotizar
               </Button>
-            </button>
+            </TallyModal>
           </div>
         </div>
       </section>

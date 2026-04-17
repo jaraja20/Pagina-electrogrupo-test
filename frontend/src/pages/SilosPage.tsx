@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { TallyModal } from "@/components/TallyModal";
 import { ChevronRight, Database, ShieldCheck, Thermometer, Cpu } from "lucide-react";
 
 export default function SilosPage() {
@@ -42,11 +43,11 @@ export default function SilosPage() {
               Silos planos, elevados y de expedición fabricados con los más altos estándares de calidad. Conserve su producción con la máxima seguridad y eficiencia.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button data-tally-open="b584We" data-tally-layout="modal" data-tally-auto-close="3000">
+              <TallyModal formId="b584We">
                 <Button size="lg" className="bg-[#E31E24] text-white hover:bg-red-700 px-8 w-full sm:w-auto" data-testid="silos-cotizar-btn">
                   Solicitar Cotización
                 </Button>
-              </button>
+              </TallyModal>
               <Link to="/marca/consilos">
                 <Button size="lg" className="bg-transparent text-white border border-white hover:bg-white hover:text-[#0D1B2A] w-full sm:w-auto" data-testid="silos-brand-btn">
                   Conocer CONSILOS
@@ -151,11 +152,11 @@ export default function SilosPage() {
           <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
             Nuestro equipo de ingenieros diseñará la solución de almacenamiento ideal para su establecimiento.
           </p>
-          <button data-tally-open="b584We" data-tally-layout="modal" data-tally-auto-close="3000">
+          <TallyModal formId="b584We">
             <Button size="lg" className="bg-white text-[#E31E24] hover:bg-gray-100 px-10 text-lg h-14" data-testid="silos-cta-btn">
               Contactar a un Asesor
             </Button>
-          </button>
+          </TallyModal>
         </div>
       </section>
     </>
