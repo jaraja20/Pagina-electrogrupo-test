@@ -125,7 +125,7 @@ const Navbar = () => {
     { name: "Empresa", href: "#", subItems: [
       { name: "Sobre nosotros", icon: Info, href: "/sobre-nosotros" },
       { name: "Proyectos", icon: Paperclip, href: "/proyectos" },
-      { name: "Trabaja con nosotros", icon: Briefcase, href: "https://tally.so/r/wL5qMz", external: true }
+      { name: "Trabaja con nosotros", icon: Briefcase, href: "#", tallyId: "wL5qMz" }
     ]},
     { name: "Irrigación", href: "#", subItems: [
       { name: "Riego por Pivot", icon: Droplets, href: "/riego-por-pivot" },
@@ -209,7 +209,16 @@ const Navbar = () => {
                           <AccordionContent>
                             <div className="flex flex-col gap-3 pl-4 border-l-2 border-gray-100 mt-2">
                               {link.subItems.map((subItem, idx) => (
-                                subItem.external ? (
+                                subItem.tallyId ? (
+                                  <button
+                                    key={idx}
+                                    data-tally-open={subItem.tallyId}
+                                    data-tally-layout="modal"
+                                    className="text-[15px] text-gray-500 hover:text-[#E31E24] transition-colors py-1 text-left"
+                                  >
+                                    {subItem.name}
+                                  </button>
+                                ) : subItem.external ? (
                                   <a 
                                     key={idx} 
                                     href={subItem.href || "#"} 
@@ -287,7 +296,12 @@ const Navbar = () => {
               <div className="flex justify-start gap-20 mb-10 px-8">
                 {navItems.find(item => item.name === activeMenu)?.subItems?.map((subItem, idx) => {
                   const Icon = subItem.icon;
-                  return subItem.external ? (
+                  return subItem.tallyId ? (
+                    <button key={idx} data-tally-open={subItem.tallyId} data-tally-layout="modal" className="flex flex-col items-center gap-4 group/sub min-w-[120px] cursor-pointer">
+                      <Icon className="w-7 h-7 text-gray-700 group-hover/sub:text-[#E31E24] transition-colors" />
+                      <span className="text-[15px] font-medium text-gray-800 group-hover/sub:text-[#E31E24] transition-colors text-center">{subItem.name}</span>
+                    </button>
+                  ) : subItem.external ? (
                     <a key={idx} href={subItem.href || "#"} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-4 group/sub min-w-[120px]">
                       <Icon className="w-7 h-7 text-gray-700 group-hover/sub:text-[#E31E24] transition-colors" />
                       <span className="text-[15px] font-medium text-gray-800 group-hover/sub:text-[#E31E24] transition-colors text-center">{subItem.name}</span>
@@ -414,11 +428,11 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 w-full px-4">
-              <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <button data-tally-open="b584We" data-tally-layout="modal" data-tally-auto-close="3000" className="w-full sm:w-auto">
                 <Button size="lg" className="bg-white text-[#0D1B2A] hover:bg-[#FF0000] hover:text-white transition-all px-8 w-full">
                   Cotizar
                 </Button>
-              </a>
+              </button>
               <Link 
                 to={slides[currentSlide].href} 
                 className="inline-flex items-center justify-center gap-2 px-8 h-9 rounded-lg text-sm font-medium transition-all bg-transparent text-white border border-transparent hover:border-white hover:bg-transparent hover:text-white w-full sm:w-auto"
@@ -828,7 +842,7 @@ const Footer = () => {
               <li><Link to="/sobre-nosotros" className="hover:opacity-100 transition-opacity">Sobre nosotros</Link></li>
               <li><a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">Contactanos</a></li>
               <li><Link to="/proyectos" className="hover:opacity-100 transition-opacity">Proyectos</Link></li>
-              <li><a href="https://tally.so/r/wL5qMz" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">Trabaja con nosotros</a></li>
+              <li><button data-tally-open="wL5qMz" data-tally-layout="modal" className="hover:opacity-100 transition-opacity text-left">Trabaja con nosotros</button></li>
               <li><a href="#" className="hover:opacity-100 transition-opacity">Soporte</a></li>
             </ul>
           </div>

@@ -49,11 +49,11 @@ export default function OuroProPage() {
                   Fertirrigación <ChevronRight className="w-4 h-4 ml-1" />
                 </Button>
               </Link>
-              <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
+              <button data-tally-open="b584We" data-tally-layout="modal" data-tally-auto-close="3000">
                 <Button size="lg" className="bg-transparent text-white border border-white hover:bg-white hover:text-[#0D1B2A] w-full sm:w-auto" data-testid="ouropro-cotizar-btn">
                   Solicitar Cotización
                 </Button>
-              </a>
+              </button>
             </div>
           </motion.div>
         </div>
@@ -169,11 +169,11 @@ export default function OuroProPage() {
                 Ver Fertirrigación
               </Button>
             </Link>
-            <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
+            <button data-tally-open="b584We" data-tally-layout="modal" data-tally-auto-close="3000">
               <Button size="lg" className="bg-transparent text-white border border-white hover:bg-white hover:text-[#E31E24] px-10 text-lg h-14">
                 Cotizar
               </Button>
-            </a>
+            </button>
           </div>
         </div>
       </section>
