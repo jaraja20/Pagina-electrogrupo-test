@@ -454,12 +454,61 @@ const Hero = () => {
   );
 };
 
-const Brands = () => {
+// Shared brand + service data (single source of truth)
+const BRAND_SERVICES = [
+  {
+    key: "consilos",
+    brandName: "CONSILOS",
+    serviceTitle: "Soluciones en almacenamiento y conservación de granos",
+    brandSummary: "CONSILOS es líder brasileño en soluciones integrales para almacenamiento y conservación de granos, con más de cuatro décadas desarrollando equipos de clase mundial para cooperativas y productores.",
+    serviceDesc: "Diseñamos, fabricamos e instalamos silos planos, elevados y de expedición, junto con sistemas de secado, limpieza y transporte de granos. Cada proyecto se adapta a la capacidad de acopio y logística de su establecimiento.",
+    image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/C%C3%B3pia_de_cons_20190114_023_unjyzv_mxh4wm.webp",
+    moreHref: "/marca/consilos",
+  },
+  {
+    key: "western",
+    brandName: "Western",
+    serviceTitle: "Riego por Pivot Central",
+    brandSummary: "Western Irrigation es referencia mundial en riego por pivot central, con estructuras robustas en acero galvanizado y tecnología de control remoto en tiempo real.",
+    serviceDesc: "Sistemas de pivot central configurables por tramos y diámetros, con ingeniería de precisión para maximizar el rendimiento del cultivo con la menor huella hídrica posible.",
+    image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/iC_Wes_Eu_Corn_2021_04_1_orrzuk_wurarg.webp",
+    moreHref: "/riego-por-pivot",
+  },
+  {
+    key: "imbil",
+    brandName: "IMBIL",
+    serviceTitle: "Soluciones en bombeo de agua",
+    brandSummary: "IMBIL es referente en bombas hidráulicas industriales y agrícolas, con más de 75 años de experiencia fabricando equipos de alta eficiencia.",
+    serviceDesc: "Bombas centrífugas, sumergibles y de alta presión, adaptadas al caudal y altura manométrica de su proyecto, con plataforma de gestión remota del bombeo.",
+    image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/Bombas_campo_funcionando_yevcla_c545ri.webp",
+    moreHref: "/sistema-de-bombeo",
+  },
+  {
+    key: "ouropro",
+    brandName: "OuroPro",
+    serviceTitle: "Fertirrigación de precisión",
+    brandSummary: "OuroPro desarrolla soluciones avanzadas de fertirrigación para agricultura de precisión, optimizando la nutrición del cultivo y reduciendo el impacto ambiental.",
+    serviceDesc: "Inyectores y sistemas de dosificación que permiten aplicar fertilizantes líquidos a través del pivot de riego, elevando la eficiencia nutricional de cada hectárea.",
+    image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904813/37411_ujtcim_xcsfmr.webp",
+    moreHref: "/fertirrigacion",
+  },
+  {
+    key: "electrogrupo",
+    brandName: "Electrogrupo",
+    serviceTitle: "Servicios especializados",
+    brandSummary: "Más de 30 años diseñando e instalando soluciones eléctricas industriales, irrigación y almacenamiento para el campo paraguayo, con 60+ colaboradores y planta propia.",
+    serviceDesc: "Proyectos llave en mano de electricidad industrial, automatización, mantenimiento y consultoría técnica para todo el ciclo productivo agrícola.",
+    image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904816/metallic-factory-machine_npwyji_vwqxhf.webp",
+    moreHref: "/sobre-nosotros",
+  },
+];
+
+const Brands = ({ onBrandClick }: { onBrandClick: (key: string) => void }) => {
   const brands = [
-    { name: "IMBIL", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651673/IMBIL_xo11xm.svg", href: "/marca/imbil" },
-    { name: "Western", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651676/Western_mzvt1o.svg", href: "/marca/western" },
-    { name: "CONSILOS", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651670/Consilos_xyzff0.svg", href: "/marca/consilos" },
-    { name: "OuroPro", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651674/OuroPro_qusrqe.svg", href: "/marca/ouropro" },
+    { name: "IMBIL", key: "imbil", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651673/IMBIL_xo11xm.svg" },
+    { name: "Western", key: "western", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651676/Western_mzvt1o.svg" },
+    { name: "CONSILOS", key: "consilos", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651670/Consilos_xyzff0.svg" },
+    { name: "OuroPro", key: "ouropro", logo: "https://res.cloudinary.com/difxr700v/image/upload/v1775651674/OuroPro_qusrqe.svg" },
   ];
 
   return (
@@ -473,14 +522,20 @@ const Brands = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center">
           {brands.map((brand) => (
-            <Link key={brand.name} to={brand.href} className="flex justify-center group" data-testid={`brand-link-${brand.name.toLowerCase()}`}>
+            <button
+              key={brand.name}
+              onClick={() => onBrandClick(brand.key)}
+              className="flex justify-center group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E31E24] rounded-md py-2 bg-transparent border-0"
+              data-testid={`brand-link-${brand.key}`}
+              aria-label={`Ver servicio de ${brand.name}`}
+            >
               <img 
                 src={brand.logo} 
                 alt={`${brand.name} Logo`} 
                 className="h-[35px] w-auto opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                 referrerPolicy="no-referrer"
               />
-            </Link>
+            </button>
           ))}
         </div>
       </div>
@@ -553,47 +608,19 @@ const Mission = () => {
   );
 };
 
-const Solutions = () => {
-  const solutions = [
-    {
-      title: "Soluciones en almacenamiento y conservación de granos",
-      brand: "CONSILOS",
-      image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/C%C3%B3pia_de_cons_20190114_023_unjyzv_mxh4wm.webp",
-      size: "large",
-      href: "/marca/consilos"
-    },
-    {
-      title: "Riego por Pivot Central",
-      brand: "Western",
-      image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/iC_Wes_Eu_Corn_2021_04_1_orrzuk_wurarg.webp",
-      size: "small",
-      href: "/marca/western"
-    },
-    {
-      title: "Soluciones en bombeo de agua",
-      brand: "IMBIL",
-      image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/Bombas_campo_funcionando_yevcla_c545ri.webp",
-      size: "small",
-      href: "/marca/imbil"
-    },
-    {
-      title: "Fertirrigación de precisión",
-      brand: "OuroPro",
-      image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904813/37411_ujtcim_xcsfmr.webp",
-      size: "small",
-      href: "/marca/ouropro"
-    },
-    {
-      title: "Servicios especializados",
-      brand: "Electrogrupo",
-      image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904816/metallic-factory-machine_npwyji_vwqxhf.webp",
-      size: "small",
-      href: "/sobre-nosotros"
-    }
-  ];
+const Solutions = ({
+  sectionRef,
+  expandedKey,
+  setExpandedKey,
+}: {
+  sectionRef: React.RefObject<HTMLDivElement | null>;
+  expandedKey: string | null;
+  setExpandedKey: (k: string | null) => void;
+}) => {
+  const expanded = BRAND_SERVICES.find((s) => s.key === expandedKey);
 
   return (
-    <section className="py-24 bg-gray-50">
+    <section ref={sectionRef} className="py-24 bg-gray-50" data-testid="solutions-section">
       <div className="container mx-auto px-6 md:px-8">
         <div className="text-center mb-16">
           <motion.div
@@ -608,53 +635,140 @@ const Solutions = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Large Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-            className="md:row-span-2"
-          >
-            <Link to={solutions[0].href} className="relative group overflow-hidden rounded-3xl h-[300px] md:h-full block">
-              <img 
-                src={solutions[0].image} 
-                alt={solutions[0].title} 
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        <AnimatePresence mode="wait">
+          {expanded ? (
+            <motion.div
+              key={`expanded-${expanded.key}`}
+              initial={{ opacity: 0, scaleX: 0.6 }}
+              animate={{ opacity: 1, scaleX: 1 }}
+              exit={{ opacity: 0, scaleX: 0.6 }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              style={{ transformOrigin: "left center" }}
+              className="relative w-full rounded-3xl overflow-hidden min-h-[620px] shadow-2xl"
+              data-testid={`expanded-service-${expanded.key}`}
+            >
+              <img
+                src={expanded.image}
+                alt={expanded.serviceTitle}
+                className="absolute inset-0 w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
-                <h3 className="text-2xl font-bold mb-2">{solutions[0].title}</h3>
-                <span className="text-sm font-medium opacity-80 uppercase tracking-widest">{solutions[0].brand}</span>
-              </div>
-            </Link>
-          </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20" />
 
-          {/* Small Cards */}
-          {solutions.slice(1).map((sol, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: 0.1 * (idx + 1) }}
-            >
-              <Link to={sol.href} className="relative group overflow-hidden rounded-3xl h-[300px] block">
-                <img 
-                  src={sol.image} 
-                  alt={sol.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
-                  <h3 className="text-xl font-bold mb-1">{sol.title}</h3>
-                  <span className="text-xs font-medium opacity-80 uppercase tracking-widest">{sol.brand}</span>
+              {/* Close button (top-right) */}
+              <button
+                onClick={() => setExpandedKey(null)}
+                className="absolute top-6 right-6 z-10 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md text-white flex items-center justify-center transition-colors border border-white/20 cursor-pointer"
+                aria-label="Cerrar panel expandido"
+                data-testid="close-expanded-btn"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.25, duration: 0.5 }}
+                className="relative z-[1] h-full min-h-[620px] flex flex-col justify-center p-8 md:p-14 lg:p-20 max-w-3xl text-white"
+              >
+                <span className="text-xs md:text-sm font-bold uppercase tracking-[0.25em] mb-4 opacity-80">
+                  {expanded.brandName}
+                </span>
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-heading leading-tight">
+                  {expanded.serviceTitle}
+                </h3>
+
+                <div className="space-y-5 mb-10 text-base md:text-lg opacity-90 leading-relaxed">
+                  <p>{expanded.brandSummary}</p>
+                  <p>{expanded.serviceDesc}</p>
                 </div>
-              </Link>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to={expanded.moreHref} data-testid={`more-details-${expanded.key}`}>
+                    <Button
+                      size="lg"
+                      className="bg-[#E31E24] hover:bg-[#FF0000] text-white transition-colors px-8 w-full sm:w-auto"
+                    >
+                      Ver más detalles <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    onClick={() => setExpandedKey(null)}
+                    className="bg-transparent border-white/60 text-white hover:bg-white hover:text-[#0D1B2A] transition-colors px-8 w-full sm:w-auto"
+                    data-testid="close-expanded-btn-secondary"
+                  >
+                    Cerrar
+                  </Button>
+                </div>
+              </motion.div>
             </motion.div>
-          ))}
-        </div>
+          ) : (
+            <motion.div
+              key="grid"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            >
+              {/* Large Card - Consilos (index 0) */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6 }}
+                className="md:row-span-2"
+              >
+                <button
+                  onClick={() => setExpandedKey(BRAND_SERVICES[0].key)}
+                  className="relative group overflow-hidden rounded-3xl h-[300px] md:h-full w-full block text-left cursor-pointer border-0 p-0 bg-transparent"
+                  data-testid={`service-card-${BRAND_SERVICES[0].key}`}
+                >
+                  <img
+                    src={BRAND_SERVICES[0].image}
+                    alt={BRAND_SERVICES[0].serviceTitle}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+                    <h3 className="text-2xl font-bold mb-2">{BRAND_SERVICES[0].serviceTitle}</h3>
+                    <span className="text-sm font-medium opacity-80 uppercase tracking-widest">{BRAND_SERVICES[0].brandName}</span>
+                  </div>
+                </button>
+              </motion.div>
+
+              {/* Small Cards */}
+              {BRAND_SERVICES.slice(1).map((sol, idx) => (
+                <motion.div
+                  key={sol.key}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: 0.1 * (idx + 1) }}
+                >
+                  <button
+                    onClick={() => setExpandedKey(sol.key)}
+                    className="relative group overflow-hidden rounded-3xl h-[300px] w-full block text-left cursor-pointer border-0 p-0 bg-transparent"
+                    data-testid={`service-card-${sol.key}`}
+                  >
+                    <img
+                      src={sol.image}
+                      alt={sol.serviceTitle}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
+                      <h3 className="text-xl font-bold mb-1">{sol.serviceTitle}</h3>
+                      <span className="text-xs font-medium opacity-80 uppercase tracking-widest">{sol.brandName}</span>
+                    </div>
+                  </button>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
@@ -849,12 +963,23 @@ const Footer = () => {
 };
 
 function Home() {
+  const [expandedKey, setExpandedKey] = useState<string | null>(null);
+  const solutionsRef = useRef<HTMLDivElement>(null);
+
+  const handleBrandClick = (key: string) => {
+    setExpandedKey(key);
+    // Wait for layout update then scroll to the expanded panel
+    setTimeout(() => {
+      solutionsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+  };
+
   return (
     <main>
       <Hero />
-      <Brands />
+      <Brands onBrandClick={handleBrandClick} />
       <Mission />
-      <Solutions />
+      <Solutions sectionRef={solutionsRef} expandedKey={expandedKey} setExpandedKey={setExpandedKey} />
       <News />
       <CTA />
     </main>
