@@ -617,7 +617,19 @@ const Solutions = ({
   expandedKey: string | null;
   setExpandedKey: (k: string | null) => void;
 }) => {
-  const expanded = BRAND_SERVICES.find((s) => s.key === expandedKey);
+  // Grid cells mapped to specific grid positions on desktop (3 cols × 2 rows).
+  // idx 0 (CONSILOS) = col 1 / span 2 rows (large card, left side)
+  // idx 1 (Western)  = col 2, row 1  (top middle)
+  // idx 2 (IMBIL)    = col 3, row 1  (top right)
+  // idx 3 (OuroPro)  = col 2, row 2  (bottom middle)
+  // idx 4 (Electrogrupo) = col 3, row 2 (bottom right)
+  const defaultPlacement = [
+    "md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3",
+    "md:col-start-2 md:col-end-3 md:row-start-1 md:row-end-2",
+    "md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-2",
+    "md:col-start-2 md:col-end-3 md:row-start-2 md:row-end-3",
+    "md:col-start-3 md:col-end-4 md:row-start-2 md:row-end-3",
+  ];
 
   return (
     <section ref={sectionRef} className="py-24 bg-gray-50" data-testid="solutions-section">
@@ -635,140 +647,165 @@ const Solutions = ({
           </motion.div>
         </div>
 
-        <AnimatePresence mode="wait">
-          {expanded ? (
-            <motion.div
-              key={`expanded-${expanded.key}`}
-              initial={{ opacity: 0, scaleX: 0.6 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              exit={{ opacity: 0, scaleX: 0.6 }}
-              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              style={{ transformOrigin: "left center" }}
-              className="relative w-full rounded-3xl overflow-hidden min-h-[620px] shadow-2xl"
-              data-testid={`expanded-service-${expanded.key}`}
-            >
-              <img
-                src={expanded.image}
-                alt={expanded.serviceTitle}
-                className="absolute inset-0 w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20" />
+        <div
+          className={`grid grid-cols-1 md:grid-cols-3 gap-6 ${
+            expandedKey
+              ? "md:grid-rows-[620px]"
+              : "md:grid-rows-[300px_300px]"
+          }`}
+        >
+          <AnimatePresence mode="popLayout" initial={false}>
+            {BRAND_SERVICES.map((sol, idx) => {
+              const isExpanded = sol.key === expandedKey;
+              const isHidden = expandedKey !== null && !isExpanded;
+              if (isHidden) return null;
 
-              {/* Close button (top-right) */}
-              <button
-                onClick={() => setExpandedKey(null)}
-                className="absolute top-6 right-6 z-10 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md text-white flex items-center justify-center transition-colors border border-white/20 cursor-pointer"
-                aria-label="Cerrar panel expandido"
-                data-testid="close-expanded-btn"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              const placementClass = isExpanded
+                ? "md:col-start-1 md:col-end-4 md:row-start-1 md:row-end-3"
+                : defaultPlacement[idx];
 
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.25, duration: 0.5 }}
-                className="relative z-[1] h-full min-h-[620px] flex flex-col justify-center p-8 md:p-14 lg:p-20 max-w-3xl text-white"
-              >
-                <span className="text-xs md:text-sm font-bold uppercase tracking-[0.25em] mb-4 opacity-80">
-                  {expanded.brandName}
-                </span>
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-heading leading-tight">
-                  {expanded.serviceTitle}
-                </h3>
-
-                <div className="space-y-5 mb-10 text-base md:text-lg opacity-90 leading-relaxed">
-                  <p>{expanded.brandSummary}</p>
-                  <p>{expanded.serviceDesc}</p>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link to={expanded.moreHref} data-testid={`more-details-${expanded.key}`}>
-                    <Button
-                      size="lg"
-                      className="bg-[#E31E24] hover:bg-[#FF0000] text-white transition-colors px-8 w-full sm:w-auto"
-                    >
-                      Ver más detalles <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
-                  </Link>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    onClick={() => setExpandedKey(null)}
-                    className="bg-transparent border-white/60 text-white hover:bg-white hover:text-[#0D1B2A] transition-colors px-8 w-full sm:w-auto"
-                    data-testid="close-expanded-btn-secondary"
-                  >
-                    Cerrar
-                  </Button>
-                </div>
-              </motion.div>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="grid"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6"
-            >
-              {/* Large Card - Consilos (index 0) */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6 }}
-                className="md:row-span-2"
-              >
-                <button
-                  onClick={() => setExpandedKey(BRAND_SERVICES[0].key)}
-                  className="relative group overflow-hidden rounded-3xl h-[300px] md:h-full w-full block text-left cursor-pointer border-0 p-0 bg-transparent"
-                  data-testid={`service-card-${BRAND_SERVICES[0].key}`}
-                >
-                  <img
-                    src={BRAND_SERVICES[0].image}
-                    alt={BRAND_SERVICES[0].serviceTitle}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
-                    <h3 className="text-2xl font-bold mb-2">{BRAND_SERVICES[0].serviceTitle}</h3>
-                    <span className="text-sm font-medium opacity-80 uppercase tracking-widest">{BRAND_SERVICES[0].brandName}</span>
-                  </div>
-                </button>
-              </motion.div>
-
-              {/* Small Cards */}
-              {BRAND_SERVICES.slice(1).map((sol, idx) => (
+              return (
                 <motion.div
                   key={sol.key}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.6, delay: 0.1 * (idx + 1) }}
+                  layout
+                  initial={{ opacity: 0, scale: 0.94 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{
+                    layout: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+                    opacity: { duration: 0.35, ease: "easeOut" },
+                    scale: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+                  }}
+                  data-testid={isExpanded ? `expanded-service-${sol.key}` : `service-card-${sol.key}`}
+                  className={`${placementClass} relative overflow-hidden rounded-3xl shadow-md ${
+                    isExpanded ? "min-h-[620px] md:min-h-0" : "h-[300px] md:h-auto"
+                  }`}
                 >
-                  <button
-                    onClick={() => setExpandedKey(sol.key)}
-                    className="relative group overflow-hidden rounded-3xl h-[300px] w-full block text-left cursor-pointer border-0 p-0 bg-transparent"
-                    data-testid={`service-card-${sol.key}`}
-                  >
-                    <img
-                      src={sol.image}
-                      alt={sol.serviceTitle}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
-                      <h3 className="text-xl font-bold mb-1">{sol.serviceTitle}</h3>
-                      <span className="text-xs font-medium opacity-80 uppercase tracking-widest">{sol.brandName}</span>
-                    </div>
-                  </button>
+                  <motion.img
+                    layout
+                    src={sol.image}
+                    alt={sol.serviceTitle}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                    transition={{ layout: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
+                  />
+                  <motion.div
+                    layout
+                    className={`absolute inset-0 ${
+                      isExpanded
+                        ? "bg-gradient-to-r from-black/85 via-black/60 to-black/20"
+                        : "bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                    }`}
+                    transition={{ layout: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
+                  />
+
+                  <AnimatePresence mode="wait" initial={false}>
+                    {isExpanded ? (
+                      <motion.div
+                        key="expanded-content"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3, delay: 0.2 }}
+                        className="absolute inset-0"
+                      >
+                        <button
+                          onClick={() => setExpandedKey(null)}
+                          className="absolute top-6 right-6 z-10 w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-md text-white flex items-center justify-center transition-colors border border-white/20 cursor-pointer"
+                          aria-label="Cerrar panel expandido"
+                          data-testid="close-expanded-btn"
+                        >
+                          <X className="w-5 h-5" />
+                        </button>
+
+                        <div className="relative h-full min-h-[620px] flex flex-col justify-center p-8 md:p-14 lg:p-20 max-w-3xl text-white">
+                          <motion.span
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 0.8, y: 0 }}
+                            transition={{ delay: 0.3, duration: 0.4 }}
+                            className="text-xs md:text-sm font-bold uppercase tracking-[0.25em] mb-4"
+                          >
+                            {sol.brandName}
+                          </motion.span>
+                          <motion.h3
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.35, duration: 0.45 }}
+                            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-heading leading-tight"
+                          >
+                            {sol.serviceTitle}
+                          </motion.h3>
+
+                          <motion.div
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 0.9, y: 0 }}
+                            transition={{ delay: 0.4, duration: 0.45 }}
+                            className="space-y-5 mb-10 text-base md:text-lg leading-relaxed"
+                          >
+                            <p>{sol.brandSummary}</p>
+                            <p>{sol.serviceDesc}</p>
+                          </motion.div>
+
+                          <motion.div
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.45, duration: 0.45 }}
+                            className="flex flex-col sm:flex-row gap-4"
+                          >
+                            <Link to={sol.moreHref} data-testid={`more-details-${sol.key}`}>
+                              <Button
+                                size="lg"
+                                className="bg-[#E31E24] hover:bg-[#FF0000] text-white transition-colors px-8 w-full sm:w-auto"
+                              >
+                                Ver más detalles <ArrowRight className="w-4 h-4 ml-2" />
+                              </Button>
+                            </Link>
+                            <Button
+                              size="lg"
+                              variant="outline"
+                              onClick={() => setExpandedKey(null)}
+                              className="bg-transparent border-white/60 text-white hover:bg-white hover:text-[#0D1B2A] transition-colors px-8 w-full sm:w-auto"
+                              data-testid="close-expanded-btn-secondary"
+                            >
+                              Cerrar
+                            </Button>
+                          </motion.div>
+                        </div>
+                      </motion.div>
+                    ) : (
+                      <motion.button
+                        key="collapsed-content"
+                        type="button"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                        onClick={() => setExpandedKey(sol.key)}
+                        className="absolute inset-0 w-full h-full flex flex-col justify-end p-6 md:p-8 text-white text-left cursor-pointer border-0 bg-transparent group"
+                        data-testid={`service-card-${sol.key}-btn`}
+                      >
+                        <h3
+                          className={`font-bold mb-2 transition-transform duration-500 group-hover:-translate-y-1 ${
+                            idx === 0 ? "text-2xl" : "text-xl"
+                          }`}
+                        >
+                          {sol.serviceTitle}
+                        </h3>
+                        <span
+                          className={`font-medium opacity-80 uppercase tracking-widest ${
+                            idx === 0 ? "text-sm" : "text-xs"
+                          }`}
+                        >
+                          {sol.brandName}
+                        </span>
+                      </motion.button>
+                    )}
+                  </AnimatePresence>
                 </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+              );
+            })}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );
