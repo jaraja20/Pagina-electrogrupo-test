@@ -754,9 +754,11 @@ const CTA = () => {
         <p className="text-xl opacity-80 mb-10 max-w-2xl mx-auto">
           30 años de experiencia en irrigación, almacenamiento y fertilización para el agro paraguayo.
         </p>
-        <Button size="lg" className="bg-white text-[#0D1B2A] hover:bg-[#FF0000] hover:text-white transition-all rounded-full px-10 py-7 text-lg font-bold shadow-xl">
-          Solicitar cotización
-        </Button>
+        <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
+          <Button size="lg" className="bg-white text-[#0D1B2A] hover:bg-[#FF0000] hover:text-white transition-all rounded-full px-10 py-7 text-lg font-bold shadow-xl">
+            Solicitar cotización
+          </Button>
+        </a>
       </div>
     </section>
   );

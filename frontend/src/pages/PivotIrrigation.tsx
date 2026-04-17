@@ -52,9 +52,11 @@ export default function PivotIrrigation() {
               Pivot Central CP600 diseñado para una amplia variedad de condiciones meteorológicas, de cultivo y terreno. Máximo rendimiento con mínimo consumo de agua. Más de 25.000 pivots vendidos en 80 países.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-[#E31E24] text-white hover:bg-red-700 transition-all px-8 w-full sm:w-auto">
-                Solicitar Cotización
-              </Button>
+              <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-[#E31E24] text-white hover:bg-red-700 transition-all px-8 w-full sm:w-auto">
+                  Solicitar Cotización
+                </Button>
+              </a>
               <Button size="lg" className="bg-transparent text-white border border-white hover:bg-white hover:text-[#0D1B2A] w-full sm:w-auto">
                 Descargar Catálogo
               </Button>
@@ -186,11 +188,16 @@ export default function PivotIrrigation() {
           <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
             Nuestros ingenieros agrónomos están listos para diseñar el sistema de riego por pivot perfecto para su establecimiento.
           </p>
-          <Button size="lg" className="bg-white text-[#E31E24] hover:bg-gray-100 transition-all px-10 text-lg h-14">
-            Contactar a un Asesor
-          </Button>
+          <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-white text-[#E31E24] hover:bg-gray-100 transition-all px-10 text-lg h-14">
+              Contactar a un Asesor
+            </Button>
+          </a>
         </div>
       </section>
     </>
+  );
+}
+
   );
 }
