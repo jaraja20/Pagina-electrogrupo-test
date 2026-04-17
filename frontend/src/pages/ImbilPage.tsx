@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { TallyModal } from "@/components/TallyModal";
 import { ChevronRight, Waves, Wrench, ShieldCheck, MapPin, Calendar, Award } from "lucide-react";
 
 export default function ImbilPage() {
@@ -50,11 +49,11 @@ export default function ImbilPage() {
                   Sistemas de Bombeo <ChevronRight className="w-4 h-4 ml-1" />
                 </Button>
               </Link>
-              <TallyModal formId="b584We">
+              <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-transparent text-white border border-white hover:bg-white hover:text-[#0D1B2A] w-full sm:w-auto" data-testid="imbil-cotizar-btn">
                   Solicitar Cotización
                 </Button>
-              </TallyModal>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -170,11 +169,11 @@ export default function ImbilPage() {
                 Ver Sistemas de Bombeo
               </Button>
             </Link>
-            <TallyModal formId="b584We">
+            <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-transparent text-white border border-white hover:bg-white hover:text-[#E31E24] px-10 text-lg h-14">
                 Cotizar
               </Button>
-            </TallyModal>
+            </a>
           </div>
         </div>
       </section>

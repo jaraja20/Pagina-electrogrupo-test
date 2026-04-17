@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { TallyModal } from "@/components/TallyModal";
 import { ChevronRight, Droplets, Gauge, Leaf, Cpu } from "lucide-react";
 
 export default function FertirrigacionPage() {
@@ -43,11 +42,11 @@ export default function FertirrigacionPage() {
               Combine riego y nutrición en una sola operación. Sistemas inteligentes que aplican la cantidad exacta de fertilizantes para cada etapa del cultivo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <TallyModal formId="b584We">
+              <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-[#E31E24] text-white hover:bg-red-700 px-8 w-full sm:w-auto" data-testid="fertirrigacion-cotizar-btn">
                   Solicitar Cotización
                 </Button>
-              </TallyModal>
+              </a>
               <Link to="/marca/ouropro">
                 <Button size="lg" className="bg-transparent text-white border border-white hover:bg-white hover:text-[#0D1B2A] w-full sm:w-auto" data-testid="fertirrigacion-brand-btn">
                   Conocer OuroPro
@@ -152,11 +151,11 @@ export default function FertirrigacionPage() {
           <p className="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
             Nuestro equipo de ingenieros agrónomos diseñará el plan de fertirrigación ideal para su establecimiento.
           </p>
-          <TallyModal formId="b584We">
+          <a href="https://tally.so/r/b584We" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-white text-[#E31E24] hover:bg-gray-100 px-10 text-lg h-14" data-testid="fertirrigacion-cta-btn">
               Contactar a un Asesor
             </Button>
-          </TallyModal>
+          </a>
         </div>
       </section>
     </>
