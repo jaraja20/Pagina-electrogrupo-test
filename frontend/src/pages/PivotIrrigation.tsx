@@ -34,13 +34,13 @@ const IMG = {
   cardAdaptation: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/4qgohdra_Photo_Wes_Li_Ls4x4d_Pi_Wa_Alf-1.webp",
   cardControl: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/a4snhbvn_Photo_Ic_Pa-8.webp",
   cardRobustness: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/jtscfa5b_Wh-8.webp",
-  cardSupport: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/nkieayq1_20240912_104456.webp",
+  cardSupport: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/lfrnnsuz_Local_EG_tpbdfl_kor0p1.webp",
   // Wide images per section
   wideEfficiency: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/iolswxde_Photo_Wes_Dt_Pi_Wa_Alf-1.webp",
   wideAdaptation: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/opclm8gd_Photo_Wes_Pivots_Cp600_Wa_Wh-12.webp",
   wideControl: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/62mdk8ul_DSC08207.webp",
   wideRobustness: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/jtscfa5b_Wh-8.webp",
-  wideSupport: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/lfrnnsuz_Local_EG_tpbdfl_kor0p1.webp",
+  wideSupport: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/nkieayq1_20240912_104456.webp",
   // Final CTA
   ctaFinal: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/inwers3f_Photo_Wes_Li_Ls4x4d_Pi_Wa_Alf.webp",
 };
@@ -172,7 +172,7 @@ const SECTIONS: SectionData[] = [
     title: "El respaldo no se promete.\nSe demuestra.",
     text: "Cuando el sistema se detiene, el tiempo juega en contra. Por eso con Electrogrupo el trabajo no termina en la instalación. Tenés un equipo técnico que responde rápido, entiende el campo y resuelve sin vueltas. Porque no se trata solo de tener tecnología, sino de mantenerla operando al máximo.",
     image: IMG.wideSupport,
-    imageAlt: "Vista aérea de la sede de Electrogrupo — respaldo técnico y logístico garantizado",
+    imageAlt: "Equipo técnico de Electrogrupo interviniendo un pivot en campo",
     benefits: [
       { icon: Clock, title: "Respuesta rápida en momentos críticos", text: "Soporte cuando realmente importa." },
       { icon: Headphones, title: "Acompañamiento técnico especializado", text: "Hablá directamente con expertos." },
