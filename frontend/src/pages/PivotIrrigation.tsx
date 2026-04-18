@@ -45,13 +45,15 @@ const IMG = {
   ctaFinal: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/inwers3f_Photo_Wes_Li_Ls4x4d_Pi_Wa_Alf.webp",
 };
 
-// --- Helper: bold "Western" inside any string ---
-const renderWithBoldWestern = (text: string): ReactNode[] => {
-  const parts = text.split(/(Western)/g);
+// --- Helper: bold brand names inside any string ---
+const BRANDS = ["Western", "Electrogrupo", "IMBIL", "CONSILOS", "OuroPro"];
+const BRAND_SPLIT_REGEX = /(Western|Electrogrupo|IMBIL|CONSILOS|OuroPro)/gi;
+const renderWithBoldBrands = (text: string): ReactNode[] => {
+  const parts = text.split(BRAND_SPLIT_REGEX);
   return parts.map((part, i) =>
-    part === "Western" ? (
+    BRANDS.some((b) => b.toLowerCase() === part.toLowerCase()) ? (
       <strong key={i} className="font-bold">
-        Western
+        {part}
       </strong>
     ) : (
       <span key={i}>{part}</span>
@@ -382,7 +384,7 @@ const BenefitSection = ({ data }: { data: SectionData }) => {
             className="lg:col-span-5 lg:pt-4"
           >
             <p className="text-gray-600 text-lg leading-relaxed whitespace-pre-line">
-              {renderWithBoldWestern(data.text)}
+              {renderWithBoldBrands(data.text)}
             </p>
           </motion.div>
         </div>
@@ -473,8 +475,9 @@ const FinalCTA = () => (
           <br className="hidden md:block" /> Es un riesgo que podés eliminar.
         </h2>
         <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed mb-10">
-          Cada campaña que pasa sin riego controlado es rendimiento que no vuelve.{" "}
-          <strong className="font-semibold text-white">Western</strong> no es un gasto: es una decisión estratégica.
+          {renderWithBoldBrands(
+            "Cada campaña que pasa sin riego controlado es rendimiento que no vuelve. Western no es un gasto: es una decisión estratégica."
+          )}
         </p>
         <a href={TALLY_FORM_URL} target="_blank" rel="noopener noreferrer" data-testid="cta-final-btn">
           <Button
