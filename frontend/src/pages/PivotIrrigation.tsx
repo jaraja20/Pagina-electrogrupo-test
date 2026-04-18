@@ -72,26 +72,31 @@ const WESTERN_CARDS = [
     title: "Eficiencia en distribución de agua",
     desc: "Más del 90% de uniformidad. Menos desperdicio, más rendimiento real.",
     image: IMG.cardEfficiency,
+    target: "eficiencia",
   },
   {
     title: "Adaptación total al entorno",
     desc: "Topografía, cultivo y suelo.",
     image: IMG.cardAdaptation,
+    target: "adaptacion",
   },
   {
     title: "Paneles iControl - Control remoto en tiempo real",
     desc: "Alertas, automatización y monitoreo.",
     image: IMG.cardControl,
+    target: "icontrol",
   },
   {
     title: "Robustez estructural y durabilidad",
     desc: "Diseñado para condiciones exigentes por décadas.",
     image: IMG.cardRobustness,
+    target: "robustez",
   },
   {
     title: "Soporte técnico contínuo",
     desc: "La respuesta rápida que buscás, en el momento preciso.",
     image: IMG.cardSupport,
+    target: "soporte",
   },
 ];
 
@@ -302,24 +307,39 @@ const WesternIntro = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: idx * 0.09 }}
-            className="relative rounded-3xl overflow-hidden aspect-[3/4] lg:aspect-[2/3] group cursor-default shadow-xl"
+            whileHover={{ y: -6 }}
+            className="relative rounded-3xl overflow-hidden aspect-[3/4] lg:aspect-[2/3] group shadow-xl"
             data-testid={`western-card-${idx}`}
           >
-            <img
-              src={card.image}
-              alt={card.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10" />
-            <div className="absolute inset-0 flex flex-col justify-end p-5 lg:p-6 text-white">
-              <h3 className="text-base lg:text-lg font-bold mb-2 leading-snug font-heading">
-                {card.title}
-              </h3>
-              <p className="text-xs lg:text-sm text-white/85 leading-relaxed">
-                {card.desc}
-              </p>
-            </div>
+            <button
+              type="button"
+              onClick={() => {
+                const el = document.getElementById(card.target);
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+              className="absolute inset-0 w-full h-full text-left cursor-pointer border-0 bg-transparent focus:outline-none focus-visible:ring-4 focus-visible:ring-[#E31E24]/60 rounded-3xl"
+              aria-label={`Ir a la sección ${card.title}`}
+              data-testid={`western-card-link-${card.target}`}
+            >
+              <img
+                src={card.image}
+                alt={card.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/10 transition-opacity duration-500 group-hover:from-black/95 group-hover:via-black/55" />
+              <div className="absolute inset-0 flex flex-col justify-end p-5 lg:p-6 text-white">
+                <h3 className="text-base lg:text-lg font-bold mb-2 leading-snug font-heading">
+                  {card.title}
+                </h3>
+                <p className="text-xs lg:text-sm text-white/85 leading-relaxed">
+                  {card.desc}
+                </p>
+                <span className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#E31E24] opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-1.5">
+                  Ver más <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />
+                </span>
+              </div>
+            </button>
           </motion.article>
         ))}
       </div>
