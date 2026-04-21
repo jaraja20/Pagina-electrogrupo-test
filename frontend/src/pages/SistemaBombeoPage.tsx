@@ -199,9 +199,9 @@ const Hero = () => (
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-5xl">
         <img src={IMBIL_LOGO} alt="IMBIL" className="h-[26px] md:h-[32px] w-auto mb-8 brightness-0 invert" referrerPolicy="no-referrer" data-testid="hero-imbil-logo" />
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-[1.05] font-heading tracking-tight" data-testid="imbil-hero-title">
-          Sistemas de bombeo para irrigación
+          Sistemas de bombeo
           <br />
-          IMBIL en Paraguay
+          para irrigación.
         </h1>
         <p className="text-lg md:text-2xl text-white/80 mb-14 max-w-3xl leading-snug font-light">
           Más horas de riego, menor costo por hectárea y resultados consistentes en cada zafra.
