@@ -463,7 +463,7 @@ const BRAND_SERVICES = [
     brandSummary: "CONSILOS es líder brasileño en soluciones integrales para almacenamiento y conservación de granos, con más de cuatro décadas desarrollando equipos de clase mundial para cooperativas y productores.",
     serviceDesc: "Diseñamos, fabricamos e instalamos silos planos, elevados y de expedición, junto con sistemas de secado, limpieza y transporte de granos. Cada proyecto se adapta a la capacidad de acopio y logística de su establecimiento.",
     image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/C%C3%B3pia_de_cons_20190114_023_unjyzv_mxh4wm.webp",
-    moreHref: "/marca/consilos",
+    moreHref: "/silos",
   },
   {
     key: "western",
