@@ -31,18 +31,18 @@ const PLACEHOLDER = (label: string) =>
   `https://placehold.co/1920x1080/0D1B2A/E31E24?text=IMBIL+%E2%80%A2+${encodeURIComponent(label)}`;
 
 const IMG = {
-  hero: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/Bombas_campo_funcionando_yevcla_c545ri.webp",
-  cardCapacity: PLACEHOLDER("Capacidad+de+bombeo"),
-  cardPlatform: PLACEHOLDER("Plataforma+de+control"),
-  cardBalsas: PLACEHOLDER("Balsas+flotantes"),
-  cardRotor: PLACEHOLDER("Rotor+non-clog"),
-  cardSupport: PLACEHOLDER("Soporte+tecnico"),
-  wideCapacity: PLACEHOLDER("Caudal+variable"),
-  widePlatform: PLACEHOLDER("Plataforma+movil"),
-  wideBalsas: PLACEHOLDER("Balsas+flotantes"),
-  wideRotor: PLACEHOLDER("Rotor+non-clog"),
-  wideSupport: PLACEHOLDER("Soporte+tecnico"),
-  ctaFinal: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/Bombas_campo_funcionando_yevcla_c545ri.webp",
+  hero: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/bfmzq3d4_Balsas%20flotantes%20para%20captacion%2003.webp",
+  cardCapacity: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/1roxp0yx_Capacidad%20variable%2001.webp",
+  cardPlatform: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/fej37yq1_Plataforma%20de%20manejo%20de%20riego%2002.webp",
+  cardBalsas: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/bfmzq3d4_Balsas%20flotantes%20para%20captacion%2003.webp",
+  cardRotor: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/cjqp9rje_Rotor%20Non%20Clog%2004.webp",
+  cardSupport: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/urwegtr6_Soporte%20tecnico%2005.webp",
+  wideCapacity: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/1roxp0yx_Capacidad%20variable%2001.webp",
+  widePlatform: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/fej37yq1_Plataforma%20de%20manejo%20de%20riego%2002.webp",
+  wideBalsas: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/bfmzq3d4_Balsas%20flotantes%20para%20captacion%2003.webp",
+  wideRotor: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/cjqp9rje_Rotor%20Non%20Clog%2004.webp",
+  wideSupport: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/urwegtr6_Soporte%20tecnico%2005.webp",
+  ctaFinal: "https://customer-assets.emergentagent.com/job_empresa-solutions-2/artifacts/1roxp0yx_Capacidad%20variable%2001.webp",
 };
 
 // --- Helper: bold brand names ---
