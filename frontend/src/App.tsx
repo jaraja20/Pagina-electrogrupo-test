@@ -136,7 +136,7 @@ const Navbar = () => {
       { name: "Silos", icon: Database, href: "/silos" }
     ]},
     { name: "Contacto", href: "https://wa.me/595983130313", external: true },
-    { name: "Soporte", href: "#" },
+    { name: "Soporte", href: "https://wa.me/595983130313", external: true },
   ];
 
   return (
@@ -998,17 +998,13 @@ const Footer = () => {
               <li><a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">Contactanos</a></li>
               <li><Link to="/proyectos" className="hover:opacity-100 transition-opacity">Proyectos</Link></li>
               <li><a href="https://tally.so/r/wL5qMz" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">Trabaja con nosotros</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Soporte</a></li>
+              <li><a href="https://wa.me/595983130313" target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">Soporte</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs opacity-50">
+        <div className="pt-10 border-t border-white/10 flex justify-center items-center text-xs opacity-50">
           <p>© 2026 Electrogrupo S.A. Todos los derechos reservados.</p>
-          <div className="flex gap-6">
-            <a href="#">Términos y condiciones</a>
-            <a href="#">Política de privacidad</a>
-          </div>
         </div>
       </div>
     </footer>
