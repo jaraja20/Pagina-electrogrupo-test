@@ -133,10 +133,7 @@ const Navbar = () => {
       { name: "Fertirrigación", icon: Zap, href: "/fertirrigacion" }
     ]},
     { name: "Pos Cosecha", href: "#", subItems: [
-      { name: "Silos", icon: Database, href: "/silos" },
-      { name: "Máquinas de limpieza", icon: Settings, href: "#" },
-      { name: "Secadora de granos", icon: Sun, href: "#" },
-      { name: "Transportadoras", icon: Truck, href: "#" }
+      { name: "Silos", icon: Database, href: "/silos" }
     ]},
     { name: "Contacto", href: "#" },
     { name: "Soporte", href: "#" },
