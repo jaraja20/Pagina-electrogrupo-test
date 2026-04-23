@@ -39,11 +39,11 @@ const IMG = {
   cardPivot: "https://customer-assets.emergentagent.com/job_page-builder-367/artifacts/vy32ac95_OuroPro%2003%20Compatible%20con%20pivot.webp",
   cardProductivity: "https://customer-assets.emergentagent.com/job_page-builder-367/artifacts/d6kpxi70_OuroPro04%20Record.webp",
   cardSupport: "https://customer-assets.emergentagent.com/job_page-builder-367/artifacts/1fkdh4is_Soporte%20tecnico%2005.webp",
-  wideComposition: PLACEHOLDER("Tres+formas+de+N"),
-  wideTechnology: PLACEHOLDER("Formulacion+americana"),
-  widePivot: PLACEHOLDER("Pivot+con+OuroPro"),
-  wideProductivity: PLACEHOLDER("Rendimiento+por+hectarea"),
-  wideSupport: PLACEHOLDER("Soporte+tecnico"),
+  wideComposition: "https://customer-assets.emergentagent.com/job_page-builder-367/artifacts/ws9t6b8e_OuroPro%20tres%20componentes%2001.webp",
+  wideTechnology: "https://customer-assets.emergentagent.com/job_page-builder-367/artifacts/bd37s1ey_OuroPro02%20tecnologia%20de%20formulacion%20americana.webp",
+  widePivot: "https://customer-assets.emergentagent.com/job_page-builder-367/artifacts/vy32ac95_OuroPro%2003%20Compatible%20con%20pivot.webp",
+  wideProductivity: "https://customer-assets.emergentagent.com/job_page-builder-367/artifacts/d6kpxi70_OuroPro04%20Record.webp",
+  wideSupport: "https://customer-assets.emergentagent.com/job_page-builder-367/artifacts/1fkdh4is_Soporte%20tecnico%2005.webp",
   ctaFinal: "https://res.cloudinary.com/difxr700v/image/upload/v1775904813/37411_ujtcim_xcsfmr.webp",
 };
 
