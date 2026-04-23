@@ -263,7 +263,7 @@ const Hero = () => (
               Solicitar evaluación técnica
             </Button>
           </a>
-          <a href="#eficiencia" data-testid="hero-cta-secondary">
+          <a href={TALLY_FORM_URL} target="_blank" rel="noopener noreferrer" data-testid="hero-cta-secondary">
             <Button
               size="lg"
               variant="outline"

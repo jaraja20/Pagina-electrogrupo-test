@@ -223,11 +223,6 @@ const Hero = () => (
               Solicitar evaluación técnica
             </Button>
           </a>
-          <a href="#capacidad" data-testid="hero-cta-secondary">
-            <Button size="lg" variant="outline" className="bg-transparent border-white/70 text-white hover:bg-white hover:text-[#0D1B2A] transition-all px-8 h-12 text-base font-semibold rounded-md w-full sm:w-auto">
-              Ver soluciones
-            </Button>
-          </a>
         </motion.div>
       </motion.div>
     </div>

@@ -135,7 +135,7 @@ const Navbar = () => {
     { name: "Pos Cosecha", href: "#", subItems: [
       { name: "Silos", icon: Database, href: "/silos" }
     ]},
-    { name: "Contacto", href: "#" },
+    { name: "Contacto", href: "https://wa.me/595983130313", external: true },
     { name: "Soporte", href: "#" },
   ];
 
@@ -167,12 +167,23 @@ const Navbar = () => {
               className="h-full flex items-center px-6 relative cursor-pointer group"
               onMouseEnter={() => setActiveMenu(link.name)}
             >
-              <Link 
-                to={link.href} 
-                className={`text-[15px] font-medium transition-colors ${activeMenu === link.name ? 'text-[#E31E24]' : (isSolid ? 'text-gray-800 group-hover:text-[#E31E24]' : 'text-white group-hover:text-white/80')}`}
-              >
-                {link.name}
-              </Link>
+              {link.external ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-[15px] font-medium transition-colors ${activeMenu === link.name ? 'text-[#E31E24]' : (isSolid ? 'text-gray-800 group-hover:text-[#E31E24]' : 'text-white group-hover:text-white/80')}`}
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link 
+                  to={link.href} 
+                  className={`text-[15px] font-medium transition-colors ${activeMenu === link.name ? 'text-[#E31E24]' : (isSolid ? 'text-gray-800 group-hover:text-[#E31E24]' : 'text-white group-hover:text-white/80')}`}
+                >
+                  {link.name}
+                </Link>
+              )}
               {/* Red line indicator */}
               <div className={`absolute bottom-0 left-0 w-full h-[3px] bg-[#E31E24] transition-transform duration-300 origin-left ${activeMenu === link.name ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
             </div>
@@ -231,12 +242,23 @@ const Navbar = () => {
                         </>
                       ) : (
                         <div className="py-3">
-                          <Link 
-                            to={link.href} 
-                            className="text-lg font-semibold text-gray-900 hover:text-[#E31E24] transition-colors"
-                          >
-                            {link.name}
-                          </Link>
+                          {link.external ? (
+                            <a
+                              href={link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-lg font-semibold text-gray-900 hover:text-[#E31E24] transition-colors"
+                            >
+                              {link.name}
+                            </a>
+                          ) : (
+                            <Link 
+                              to={link.href} 
+                              className="text-lg font-semibold text-gray-900 hover:text-[#E31E24] transition-colors"
+                            >
+                              {link.name}
+                            </Link>
+                          )}
                         </div>
                       )}
                     </AccordionItem>
@@ -965,9 +987,6 @@ const Footer = () => {
               <li><Link to="/sistema-de-bombeo" className="hover:opacity-100 transition-opacity">Sistema de bombeo</Link></li>
               <li><Link to="/fertirrigacion" className="hover:opacity-100 transition-opacity">Fertirrigación</Link></li>
               <li><Link to="/silos" className="hover:opacity-100 transition-opacity">Silos</Link></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Máquinas de limpieza</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Secadora de Granos</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Transportadores</a></li>
             </ul>
           </div>
 
