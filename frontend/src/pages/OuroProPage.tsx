@@ -127,7 +127,7 @@ export default function OuroProPage() {
             {[
               { icon: Droplets, title: "Fertirrigación de Precisión", desc: "Sistemas que combinan riego y nutrición en una sola operación, garantizando la dosificación exacta de fertilizantes para cada cultivo.", href: "/fertirrigacion", primary: true },
               { icon: Gauge, title: "Dosificación Automática", desc: "Controladores inteligentes que ajustan automáticamente la concentración y el volumen de nutrientes según las necesidades del cultivo.", href: "/fertirrigacion", primary: false },
-              { icon: Leaf, title: "Asesoramiento Agronómico", desc: "Servicio de consultoría para diseñar planes de fertirrigación adaptados al tipo de suelo, cultivo y condiciones climáticas.", href: "#", primary: false }
+              { icon: Leaf, title: "Asesoramiento Agronómico", desc: "Servicio de consultoría para diseñar planes de fertirrigación adaptados al tipo de suelo, cultivo y condiciones climáticas.", href: "/fertirrigacion", primary: false }
             ].map((service, idx) => (
               <motion.div
                 key={idx}

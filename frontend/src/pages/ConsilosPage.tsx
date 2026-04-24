@@ -126,9 +126,9 @@ export default function ConsilosPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { icon: Database, title: "Silos", desc: "Silos planos, elevados y de expedición para almacenamiento seguro de granos a gran escala.", href: "/silos", primary: true },
-              { icon: Sun, title: "Secadoras de Granos", desc: "Sistemas de secado eficiente que garantizan el nivel óptimo de humedad para la conservación.", href: "#", primary: false },
-              { icon: Settings, title: "Máquinas de Limpieza", desc: "Equipos de pre-limpieza y limpieza para separar impurezas y garantizar la calidad del grano.", href: "#", primary: false },
-              { icon: Truck, title: "Transportadoras", desc: "Ascensores de cangilones y cintas transportadoras para el manejo eficiente del grano.", href: "#", primary: false }
+              { icon: Sun, title: "Secadoras de Granos", desc: "Sistemas de secado eficiente que garantizan el nivel óptimo de humedad para la conservación.", href: "/silos", primary: false },
+              { icon: Settings, title: "Máquinas de Limpieza", desc: "Equipos de pre-limpieza y limpieza para separar impurezas y garantizar la calidad del grano.", href: "/silos", primary: false },
+              { icon: Truck, title: "Transportadoras", desc: "Ascensores de cangilones y cintas transportadoras para el manejo eficiente del grano.", href: "/silos", primary: false }
             ].map((service, idx) => (
               <motion.div
                 key={idx}

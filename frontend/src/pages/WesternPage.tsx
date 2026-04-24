@@ -143,7 +143,7 @@ export default function WesternPage() {
                 icon: ShieldCheck,
                 title: "Permapipe™ y Repuestos",
                 desc: "Tubería con revestimiento interno de HDPE para aguas corrosivas. Stock permanente de repuestos originales, motores, reductores y neumáticos.",
-                href: "#",
+                href: "/riego-por-pivot",
                 primary: false
               }
             ].map((service, idx) => (

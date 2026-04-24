@@ -357,7 +357,7 @@ const Hero = () => {
         "Adaptado a la necesidad\nde riego"
       ],
       image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/Bombas_campo_funcionando_yevcla_c545ri.webp",
-      href: "#"
+      href: "/sistema-de-bombeo"
     },
     {
       label: "CONSILOS",
@@ -368,7 +368,7 @@ const Hero = () => {
         "Ascensores y cintas\ntransportadoras"
       ],
       image: "https://res.cloudinary.com/difxr700v/image/upload/v1775904814/COPACOL_-_Ubirata_-_08-01-2025_-_v03_l0zdkc_u9wfhv.webp",
-      href: "#"
+      href: "/silos"
     }
   ];
 

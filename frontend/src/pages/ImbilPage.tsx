@@ -127,7 +127,7 @@ export default function ImbilPage() {
             {[
               { icon: Waves, title: "Bombas para Irrigación", desc: "Bombas centrífugas diseñadas específicamente para sistemas de riego agrícola, con caudales variables y alta eficiencia energética.", href: "/sistema-de-bombeo", primary: true },
               { icon: Wrench, title: "Bombas Industriales", desc: "Soluciones de bombeo para aplicaciones industriales y de abastecimiento urbano, con materiales resistentes a la corrosión.", href: "/sistema-de-bombeo", primary: false },
-              { icon: ShieldCheck, title: "Repuestos y Asistencia", desc: "Stock permanente de repuestos originales IMBIL. Servicio técnico especializado y mantenimiento preventivo.", href: "#", primary: false }
+              { icon: ShieldCheck, title: "Repuestos y Asistencia", desc: "Stock permanente de repuestos originales IMBIL. Servicio técnico especializado y mantenimiento preventivo.", href: "/sistema-de-bombeo", primary: false }
             ].map((service, idx) => (
               <motion.div
                 key={idx}
