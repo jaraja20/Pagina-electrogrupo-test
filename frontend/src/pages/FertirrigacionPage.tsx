@@ -225,7 +225,7 @@ const Hero = () => (
               Cotizar
             </Button>
           </a>
-          <a href="#productividad" data-testid="hero-cta-secondary">
+          <a href={TALLY_FORM_URL} target="_blank" rel="noopener noreferrer" data-testid="hero-cta-secondary">
             <Button size="lg" variant="outline" className="bg-transparent border-white/70 text-white hover:bg-white hover:text-[#0D1B2A] transition-all px-8 h-12 text-base font-semibold rounded-md w-full sm:w-auto">
               Calcular l/ha
             </Button>
