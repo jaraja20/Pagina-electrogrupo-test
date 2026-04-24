@@ -179,6 +179,7 @@ const Navbar = () => {
               ) : (
                 <Link 
                   to={link.href} 
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                   className={`text-[15px] font-medium transition-colors ${activeMenu === link.name ? 'text-[#E31E24]' : (isSolid ? 'text-gray-800 group-hover:text-[#E31E24]' : 'text-white group-hover:text-white/80')}`}
                 >
                   {link.name}
